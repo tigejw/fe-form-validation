@@ -8,10 +8,22 @@ const bottomTextError = document.getElementById("bottom-text-error");
 const formContainer = document.getElementsByClassName("form-container");
 const nameError = document.getElementById("name-error");
 const topTextError = document.getElementById("top-text-error");
+let bottomTextSubmit;
+let topTextSubmit;
+let nameSubmit;
 
 form.addEventListener("submit", (event) => {
-  event.preventDefault();
+  console.log(bottomText.classList);
 
+  if (
+    bottomTextSubmit.trim() === "" ||
+    bottomTextSubmit.length >= 50 ||
+    nameSubmit.trim() === "" ||
+    topTextSubmit.trim() === "" ||
+    topTextSubmit.length >= 50
+  ) {
+    event.preventDefault();
+  }
   console.log("submit!");
 });
 
@@ -26,6 +38,7 @@ nameInput.addEventListener("blur", (event) => {
     event.target.classList.remove("invalid");
     nameError.classList.remove("unhidden");
   }
+  nameSubmit = nameValue;
   console.log(nameValue);
 });
 
@@ -40,12 +53,13 @@ topText.addEventListener("blur", (event) => {
     event.target.classList.remove("invalid");
     topTextError.classList.remove("unhidden");
   }
+  topTextSubmit = topTextValue;
   console.log(topTextValue);
 });
 
 bottomText.addEventListener("blur", (event) => {
   const bottomTextValue = event.target.value;
-  if (bottomTextValue.trim() === "" || bottomText.length >= 50) {
+  if (bottomTextValue.trim() === "" || bottomTextValue.length >= 50) {
     event.target.classList.add("invalid");
     event.target.classList.remove("valid");
     bottomTextError.classList.add("unhidden");
@@ -54,5 +68,6 @@ bottomText.addEventListener("blur", (event) => {
     event.target.classList.remove("invalid");
     bottomTextError.classList.remove("unhidden");
   }
-  console.log(bottomTextValue);
+  bottomTextSubmit = bottomTextValue;
+  console.log(bottomTextValue.length);
 });

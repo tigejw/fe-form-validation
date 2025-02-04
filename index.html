@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="index.js" defer></script>
+        <link rel="stylesheet" href="styles.css" />
+        <title>MEME GENERATOR</title>
+    </head>
+    <body>
+        <header>
+            <h1>MEME GENERATOR</h1>
+            <p>some instructions
+                <ul>
+                    <li>instruction 1</li>
+                    <li>instruction 2</li>
+                    <li>instruction 2</li>
+                </ul>
+            </p>
+        </header>
+        <div class="form-container">
+        <form id="input-form" action="success.html" method="GET">
+            <label for="name">name</label>
+            <input type="text" id="name" name="name" required>
+            <br/>
+            <div id="name-error" class="hidden">Name cannot be blank!</div>
+            <br/>
+            <label for="top-text">top text</label>
+            <input type="text" id="top-text" name="top-text" required>
+            <br/>
+            <div id="top-text-error" class="hidden">Top Text cannot be blank or exceed 50 characters!</div>
+            <br/>
+            <label for="bottom-text">bottom-text</label>
+            <input type="text" id="bottom-text" name="bottom-text" required>
+            <br/>
+            <div id="bottom-text-error" class="hidden">Bottom Text cannot be blank or exceed 50 characters!</div>
+            <br/>
+            <input type="submit" id="generate" value="generate meme" />
+        </form>
+        </div>
+    </body>
+</html>
